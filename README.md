@@ -9,9 +9,14 @@ Next, we move on to detecting the bottoms of the bottles, which have a larger ra
 Finally, we need to detect the sideways bottles in Image 10 and Image 15. The method I used to detect this was centroid detection. The Centroid function and regionprops function[5] allow us to detect certain shapes and extract statistical data to categorize and isolate the shapes. We will be looking for shapes with a certain area, perimeter, and bounding box width (i.e. BoundingBox(3) ) in order to detect our shapes. This is contained in one if statement in the program, stating that if the Area of the centroid is between 150 and 220 pixels, then a red circle is drawn. Additionally, if the Perimeter of the centroid is below 180 pixels or above 480 pixels, and the width of the Bounding Box is above 100 pixels, then a red circle is drawn. Some images that had issues were Image 16 and any image with an upside down bottle or a cup, since the area and perimeter often matches those metrics above. This is a very unreliable method and most likely is to make mistakes, either not detecting sideways bottles or giving out false positives; however, it is a 100% success rate for the sideways bottles in Image 10 and 15. The sideways bottles are marked as red in the final images.
 
 [1] https://se.mathworks.com/help/images/ref/imfindcircles.html
+
 [2] https://se.mathworks.com/help/images/ref/imgaussfilt.html
+
 [3] https://se.mathworks.com/help/images/edge-detection.html
+
 [4] https://se.mathworks.com/help/images/ref/viscircles.html
+
 [5] https://se.mathworks.com/matlabcentral/answers/411500-how-do-i-read-all-the-files-in-a-folder
+
 [6] https://se.mathworks.com/help/images/ref/regionprops.html#buorh5j-1
       https://se.mathworks.com/matlabcentral/answers/110855-how-to-detect-the-shape-in-matlab
